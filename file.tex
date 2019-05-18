@@ -1,147 +1,132 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="1671.4">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
-</head>
-<body>
-<p class="p1">\documentclass[a4paper, 12pt]{article}</p>
-<p class="p1">\usepackage[T2A]{fontenc}<span class="Apple-converted-space"> </span></p>
-<p class="p1">\usepackage[utf8]{inputenc}<span class="Apple-converted-space"> </span></p>
-<p class="p1">\usepackage{amssymb}</p>
-<p class="p1">\usepackage{amsmath}</p>
-<p class="p1">\usepackage[english, russian]{babel}<span class="Apple-converted-space"> </span></p>
-<p class="p1">\setlength{\parskip}{1.3ex}</p>
-<p class="p1">\DeclareMathOperator*{\sign}{sign}</p>
-<p class="p2"><br></p>
-<p class="p1">\begin{document}</p>
-<p class="p1">\begin{center} \huge</p>
-<p class="p1">Решение системы уравнений</p>
-<p class="p1">\end{center}</p>
-<p class="p1">\textbf{</p>
-<p class="p1">Задача.</p>
-<p class="p1">}</p>
-<p class="p1">Найти все (x, y) $\in \mathbb{R}^2 $, удовлетворяющие системе:</p>
-<p class="p2"><br></p>
-<p class="p1">$$</p>
-<p class="p1">\left\{</p>
-<p class="p1">\begin{array} {l c l r}</p>
-<p class="p1">4x + \frac{1}{1+\th^2{x}} + \frac{1}{1+\th^2{y}} &amp;= &amp;\alpha &amp;\\</p>
-<p class="p1">&amp;&amp;&amp; (1) \\</p>
-<p class="p1">\cos{y} + 2x + \frac{1}{2}\arctg{x}&amp;= &amp;0&amp;</p>
-<p class="p1">\end{array}</p>
-<p class="p1">\right.</p>
-<p class="p1">$$</p>
-<p class="p1">\newline</p>
-<p class="p1">\begin{text} \bf</p>
-<p class="p1">\textbf{</p>
-<p class="p1">Теорема.</p>
-<p class="p1">}</p>
-<p class="p1">Если верны следующие условия:</p>
-<p class="p1">\end{text}</p>
-<p class="p1">\begin{enumerate}</p>
-<p class="p1">\item $X$ - полное нормированное пространство</p>
-<p class="p1">\item $\Omega \subset X$ - выпуклое множество</p>
-<p class="p1">\item $\Omega$ замкнуто</p>
-<p class="p1">\item Отображение $ P:\Omega\times A \to \Omega$<span class="Apple-converted-space"> </span></p>
-<p class="p1">\item $\forall a \in A, \: \forall x \in \Omega \;\; \exists P^{'}_x(x, \alpha)$</p>
-<p class="p1">\item $\exists q \in (0, 1): \; \underset{x \in \Omega}{\sup} ||P^{'}_x(x, \alpha)|| \leq q &lt; 1, \;\forall a \in A$</p>
-<p class="p1">\item $\forall x \in \Omega$ отображение $P(x, \alpha)$ непрерывно по $\alpha$ в точке $\alpha_0$</p>
-<p class="p1">\end{enumerate}</p>
-<p class="p1">\text{</p>
-<p class="p1">То:</p>
-<p class="p1">}</p>
-<p class="p1">\begin{enumerate}</p>
-<p class="p1">\item $\forall \alpha \in A$ $\exists!$ решение $x = x(\alpha)$ уравнения $P(x_*, \alpha) = x_*$</p>
-<p class="p1">\item $x(\alpha) = \underset{{n\to \infty}}{\lim}x_n(\alpha)$ и $x_{n+1}(\alpha) = P(x_n(\alpha), \alpha)$</p>
-<p class="p1">\item Скорость сходимости: $\rho(x_n, x_*) \le \frac{q^{n}}{1-q} \rho(x_1, x_0)$</p>
-<p class="p1">\item Отображение $x(\alpha)$ непрерывно в точке $\alpha_0$</p>
-<p class="p1">\end{enumerate}</p>
-<p class="p2"><br></p>
-<p class="p1">\begin{text} \bf</p>
-<p class="p1">\newline</p>
-<p class="p1">\textbf{Решение.}</p>
-<p class="p1">\end{text}</p>
-<p class="p1">Преобразуем систему (1):</p>
-<p class="p1">$$</p>
-<p class="p1">\left\{</p>
-<p class="p1">\begin{array} {l c l r}</p>
-<p class="p1">x &amp;= &amp; - \frac{1}{2}(\cos{y}+\frac{1}{2}\arctg{x}) &amp;\\</p>
-<p class="p1">&amp;&amp;&amp; (2) \\</p>
-<p class="p1">y &amp;= &amp;\frac{1}{4}(\alpha - \frac{1}{1+\th^2{x}} - \frac{1}{1+\th^2{y}})&amp;</p>
-<p class="p1">\end{array}</p>
-<p class="p1">\right.</p>
-<p class="p1">$$</p>
-<p class="p2"><br></p>
-<p class="p1">Рассмотрим отображение $P: \Omega\times$A$\to\Omega,$</p>
-<p class="p1">$$</p>
-<p class="p1">((x, \: y), \: \alpha) \mapsto</p>
-<p class="p1">\left(</p>
-<p class="p1">\begin{array} {l c l}</p>
-<p class="p1">- \frac{1}{2}(\cos{y}+\frac{1}{2}\arctg{x}) \\\\</p>
-<p class="p1">\frac{1}{4}(\alpha - \frac{1}{1+\th^2{x}} - \frac{1}{1+\th^2{y}})</p>
-<p class="p1">\end{array}</p>
-<p class="p1">\right)</p>
-<p class="p1">$$</p>
-<p class="p2"><br></p>
-<p class="p1">\text{Проверим выполнение условий теоремы.}</p>
-<p class="p1">В качестве множества $X$ возьмем $\mathbb{R}$. Теперь оценим $\Omega$:</p>
-<p class="p1">$|\frac{1}{2}(\cos{y} + \frac{1}{2}\arctg{x})| &lt; 1$ =&gt; |x| &lt; 1,<span class="Apple-converted-space"> </span></p>
-<p class="p1">из первого ур-ия системы (1): $ -2 &lt; \alpha &lt; 6$,</p>
-<p class="p1">тогда $|y| &lt; 2$.</p>
-<p class="p1">Таким образом, положив $\Omega = \left[-1; 1\right]\times\left[-2, 2\right]$,</p>
-<p class="p1">$ $A$ = \left(-2; 6\right)$, получим, что условия 1-4 теоремы выполнены.<span class="Apple-converted-space"> </span></p>
-<p class="p1">$$</p>
-<p class="p1">\forall \alpha \in A \;\;</p>
-<p class="p1">P^{'}_x((x, y), \alpha) =</p>
-<p class="p1">\left(</p>
-<p class="p1">\begin{array}{cc}</p>
-<p class="p1">-\frac{1}{4}\frac{1}{1+x^2} &amp; \frac{\sin{y}}{2} \\\\</p>
-<p class="p1">\frac{\th{2x}}{4\ch^2{2x}} &amp; \frac{\th{2y}}{4\ch^2{2y}}</p>
-<p class="p1">\end{array}</p>
-<p class="p1">\right)</p>
-<p class="p1">$$</p>
-<p class="p1">Т.е. условие 5 выполнено. Т.к. $P$ линейна по $\alpha$, то условие 7 выполнено. Найдем теперь $q \in (0, 1): \; \underset{x \in \Omega}{\sup} ||P^{'}_x(x, \alpha)|| \leq q &lt; 1, \;\forall a \in A$.</p>
-<p class="p1">\newline</p>
-<p class="p1">$\forall (x, y) \in \mathbb{R}^2: \;$</p>
-<p class="p1">$$</p>
-<p class="p1">\bigg|\frac{1}{4}\frac{1}{1+x^2}\bigg| \leq \frac{1}{4}, \;\;\;</p>
-<p class="p1">\bigg|\frac{\sin{y}}{2}\bigg| \leq \frac{1}{2}</p>
-<p class="p1">$$</p>
-<p class="p1">$$</p>
-<p class="p1">\left(\frac{\th{2x}}{4\ch^2{2x}}\right)' = \frac{3-\ch{4x}}{4\sh^3{2x}} \;</p>
-<p class="p1">=&gt; \bigg|\frac{\th{2x}}{4\ch^2{2x}}\bigg| \leq \frac{1}{8}</p>
-<p class="p1">$$</p>
-<p class="p1">Рассмотрим ||$B$||:</p>
-<p class="p1">$$</p>
-<p class="p1">||B|| = \underset{j}\max\sum_i{|b_{ij}|}, \;\;</p>
-<p class="p1">B = \left(</p>
-<p class="p1">\begin{array}{cc}</p>
-<p class="p1">\frac{1}{4} &amp; \frac{1}{2} \\</p>
-<p class="p1">\frac{1}{8} &amp; \frac{1}{8}</p>
-<p class="p1">\end{array}</p>
-<p class="p1">\right)</p>
-<p class="p1">=&gt; ||B|| = \frac{1}{4} + \frac{1}{2} = \frac{3}{4} &lt; 1</p>
-<p class="p1">$$</p>
-<p class="p1">Итак, все условия теоремы выполнены. Вычислим оценку числа шагов.</p>
-<p class="p1">По теореме (п. 3): $\rho(x_n, x_*) \le \frac{q^{n}}{1-q} \rho(x_1, x_0)$.</p>
-<p class="p1">Тогда с учетом $\rho(x_n, x_*) = \varepsilon,\; x_0 = (0, 0),\; \alpha = 0 $<span class="Apple-converted-space">  </span>получим:</p>
-<p class="p1">$$</p>
-<p class="p1">n \leq \log_q{\frac{\varepsilon(1-q)}{\rho(x_1, x_0)}} \;\;,</p>
-<p class="p1">x_1 = \left(-\frac{1}{2}, \frac{\alpha-2}{4}\right), \;\;</p>
-<p class="p1">\rho(x_1, x_0) = \frac{\sqrt{\alpha^2-4\alpha+8}}{4} \leq \frac{\sqrt{5}}{2} $$</p>
-<p class="p1">$$</p>
-<p class="p1">n \leq \log_{\frac{3}{4}}{\frac{\varepsilon}{2\sqrt{5}}}</p>
-<p class="p1">$$</p>
-<p class="p1">Для $\varepsilon = 10^{-18}: \; n \leq 149.277$</p>
-<p class="p2"><br></p>
-<p class="p1">\end{document}</p>
-</body>
-</html>
+\documentclass[a4paper, 12pt]{article}
+\usepackage[T2A]{fontenc} 
+\usepackage[utf8]{inputenc} 
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[english, russian]{babel} 
+\setlength{\parskip}{1.3ex}
+\DeclareMathOperator*{\sign}{sign}
+
+\begin{document}
+\begin{center} \huge
+Решение системы уравнений
+\end{center}
+\textbf{
+Задача 21.
+}
+Найти все (x, y) $\in \mathbb{R}^2 $, удовлетворяющие системе:
+
+$$
+\left\{
+\begin{array} {l c l r}
+4y + \frac{1}{1+\th^2{x}} + \frac{1}{1+\th^2{y}} &= &\alpha &\\
+&&& (1) \\
+\cos{y} + 2x + \frac{1}{2}\arctg{x}&= &0&
+\end{array}
+\right.
+$$
+\newline
+\begin{text} \bf
+\textbf{
+Теорема.
+}
+Если верны следующие условия:
+\end{text}
+\begin{enumerate}
+\item $X$ - полное нормированное пространство
+\item $\Omega \subset X$ - выпуклое множество
+\item $\Omega$ замкнуто
+\item Отображение $ P:\Omega\times A \to \Omega$ 
+\item $\forall a \in A, \: \forall x \in \Omega \;\; \exists P^{'}_x(x, \alpha)$
+\item $\exists q \in (0, 1): \; \underset{x \in \Omega}{\sup} ||P^{'}_x(x, \alpha)|| \leq q < 1, \;\forall a \in A$
+\item $\forall x \in \Omega$ отображение $P(x, \alpha)$ непрерывно по $\alpha$ в точке $\alpha_0$
+\end{enumerate}
+\text{
+То:
+}
+\begin{enumerate}
+\item $\forall \alpha \in A$ $\exists!$ решение $x = x(\alpha)$ уравнения $P(x_*, \alpha) = x_*$
+\item $x(\alpha) = \underset{{n\to \infty}}{\lim}x_n(\alpha)$ и $x_{n+1}(\alpha) = P(x_n(\alpha), \alpha)$
+\item Скорость сходимости: $\rho(x_n, x_*) \le \frac{q^{n}}{1-q} \rho(x_1, x_0)$
+\item Отображение $x(\alpha)$ непрерывно в точке $\alpha_0$
+\end{enumerate}
+
+\begin{text} \bf
+\newline
+\textbf{Решение.}
+\end{text}
+Преобразуем систему (1):
+$$
+\left\{
+\begin{array} {l c l r}
+x &= & - \frac{1}{2}(\cos{y}+\frac{1}{2}\arctg{x}) &\\
+&&& (2) \\
+y &= &\frac{1}{4}(\alpha - \frac{1}{1+\th^2{x}} - \frac{1}{1+\th^2{y}})&
+\end{array}
+\right.
+$$
+
+Рассмотрим отображение $P: \Omega\times$A$\to\Omega,$
+$$
+((x, \: y), \: \alpha) \mapsto
+\left(
+\begin{array} {l c l}
+- \frac{1}{2}(\cos{y}+\frac{1}{2}\arctg{x}) \\\\
+\frac{1}{4}(\alpha - \frac{1}{1+\th^2{x}} - \frac{1}{1+\th^2{y}})
+\end{array}
+\right)
+$$
+
+Проверим выполнение условий теоремы.
+В качестве множества $X$ возьмем $\mathbb{R}$. Теперь оценим $\Omega$:
+$|\frac{1}{2}(\cos{y} + \frac{1}{2}\arctg{x})| < 1$ => |x| < 1, 
+из первого ур-ия системы (1): $ -2 < \alpha < 6$,
+тогда $|y| < 2$.
+Таким образом, положив $\Omega = \left[-1; 1\right]\times\mathbb{R}$,
+$ $A$ = \mathbb{R}$, получим, что условия 1-4 теоремы выполнены. 
+$$
+\forall \alpha \in A \;\;
+P^{'}_x((x, y), \alpha) =
+\left(
+\begin{array}{cc}
+-\frac{1}{4}\frac{1}{1+x^2} & \frac{\sin{y}}{2} \\\\
+\frac{\th{2x}}{4\ch^2{2x}} & \frac{\th{2y}}{4\ch^2{2y}}
+\end{array}
+\right)
+$$
+Т.е. условие 5 выполнено. Т.к. $P$ линейна по $\alpha$, то условие 7 выполнено. Найдем теперь $q \in (0, 1): \; \underset{x \in \Omega}{\sup} ||P^{'}_x(x, \alpha)|| \leq q < 1, \;\forall a \in A$.
+\newline
+$\forall (x, y) \in \mathbb{R}^2: \;$
+$$
+\bigg|\frac{1}{4}\frac{1}{1+x^2}\bigg| \leq \frac{1}{4}, \;\;\;
+\bigg|\frac{\sin{y}}{2}\bigg| \leq \frac{1}{2}
+$$
+$$
+\left(\frac{\th{2x}}{4\ch^2{2x}}\right)' = \frac{3-\ch{4x}}{4\sh^3{2x}}, \;
+x = \pm\frac{1}{4\ch{3}} \text{ - точки экстремума}
+=> \bigg|\frac{\th{2x}}{4\ch^2{2x}}\bigg| \leq \frac{1}{8}
+$$
+Рассмотрим ||$B$||:
+$$
+||B|| = \underset{j}\max\sum_i{|b_{ij}|}, \;\;
+B = \left(
+\begin{array}{cc}
+\frac{1}{4} & \frac{1}{2} \\
+\frac{1}{8} & \frac{1}{8}
+\end{array}
+\right)
+=> ||B|| = \frac{1}{2} + \frac{1}{8} = \frac{5}{8} < 1
+$$
+Итак, все условия теоремы выполнены. Вычислим оценку числа шагов.
+По теореме (п. 3): $\rho(x_n, x_*) \le \frac{q^{n}}{1-q} \rho(x_1, x_0)$.
+Тогда с учетом $\rho(x_n, x_*) = \varepsilon,\; x_0 = (0, 0) $  получим:
+$$
+n \leq \log_q{\frac{\varepsilon(1-q)}{\rho(x_1, x_0)}} \;\;,
+x_1 = \left(-\frac{1}{2}, \frac{\alpha-2}{4}\right), \;\;
+\rho(x_1, x_0) = \frac{\sqrt{\alpha^2-4\alpha+8}}{4} $$
+$$
+n \leq \log_{\frac{5}{8}}{\frac{3\varepsilon}{2\sqrt{\alpha^2-4\alpha+8}}}
+$$
+Например, для $\varepsilon = 10^{-18},\; \alpha = 0: \; n \leq 89.5$
+
+\end{document}

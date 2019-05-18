@@ -14,14 +14,14 @@ double norma(double x, double y) {
 	return sqrt(x * x + y * y);
 }
 
-int main(int argc, char ** argv) {
+int main() {
 	double a = 0.;
 	double x0 = 0.;
 	double y0 = 0.;
 	double E = 1e-19;
 	double t = 0;
 
-	printf("input a from (-2, 6), x0 from [-1, 1], y0 from [-2, 2], E\n");
+	printf("input a, x0 from [-1, 1], y0, E\n");
 	if (scanf("%lf%lf%lf%lf", &a, &x0, &y0, &E) != 4) { \
 		perror("input error\n"); \
 		return 0; \
@@ -44,10 +44,9 @@ int main(int argc, char ** argv) {
 	if (i == MAX_ITER) {
 		printf("MAX_ITER\nnorma = %le\n", norma(x - x0, y - y0));
 	} else {
-//		printf("iterations %d\nnorma = %le\n"\
-				"x = %.16lf\ny = %.16lf\n", i, n, x, y);
 		printf("iterations %d\nnorma = %le\n"\
-				"x = %le\ny = %le\n", i, n, x, y);
+				"x = %.16lf\ny = %.16lf\n", i, n, x, y);
+//		printf("iterations %d\nnorma = %le\nx = %le\ny = %le\n", i, n, x, y);
 	}
 
 	return 0;
